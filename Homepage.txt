@@ -1,0 +1,108 @@
+package chatbot;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
+
+public class home {
+
+	private JFrame frame;
+	private JLabel fname;
+	private String name;
+	private JLabel username;
+	private String j17;
+	private AbstractButton btnCancel;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					home window = new home();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public home() {
+		initialize();
+	}
+	public home(String name) {
+		this.name = j17;
+		
+		initialize();
+	}
+
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 800, 433);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(34, 33, 728, 83);
+		frame.getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.setText("Hello!welcome to the chatbot, This is the chatbot you can see the information of the university and their details");
+		//ImageIcon icon = new ImageIcon("images/example.jpg");
+		
+		JLabel know = new JLabel("To know more?");
+		know.setBounds(34, 355, 102, 37);
+		frame.getContentPane().add(know);
+		
+		JButton FbtnAQ = new JButton("FAQ'S");
+		FbtnAQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FAQ b=new FAQ();
+				b.setVisible(true);
+			}
+		});
+		FbtnAQ.setBounds(144, 362, 102, 23);
+		frame.getContentPane().add(FbtnAQ);
+		
+		JButton Cancel = new JButton("Cancel");
+		Cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				collge c=new collge();
+				c.setVisible(true);
+			}
+		});
+		Cancel.setBounds(287, 362, 89, 23);
+		frame.getContentPane().add(Cancel);
+	}
+	
+		
+		
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		frame.setVisible(b);
+		
+	}
+}

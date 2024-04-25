@@ -1,0 +1,110 @@
+package chatbot;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JSlider;
+import javax.swing.JScrollBar;
+import javax.swing.JButton;
+
+public class FAQ {
+
+	private JFrame frmChatbot;
+	private JTextField textField;
+	private JTextArea textArea_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FAQ window = new FAQ();
+					window.frmChatbot.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	/**
+	 * Create the application.
+	 */
+	public FAQ() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmChatbot = new JFrame();
+		frmChatbot.setTitle("Chatbot");
+		frmChatbot.setBounds(100, 100, 1000, 700);
+		frmChatbot.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmChatbot.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("FAQ'S");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel.setBounds(47, 26, 73, 37);
+		frmChatbot.getContentPane().add(lblNewLabel);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(196, 334, 5, 22);
+		frmChatbot.getContentPane().add(textArea);
+		
+		textArea_1 = new JTextArea();
+		textArea_1.setBounds(10, 60, 1164, 603);
+		textArea_1.setText("1.How do I apply to the university?\r\n"
+				+ "Typically, you can apply online through the university's admissions portal. Make sure to check the specific requirements and deadlines for your desired program.\r\n"
+				+ "2.What documents do I need for the application?\r\n"
+				+ "   Commonly required documents include transcripts, standardized test scores (like the SAT or ACT), letters of recommendation\r\n,"
+				+ "  a personal statement or essay, and any additional materials specified by the university.\r\n"
+				+ "3.What is the deadline for application submission?\r\n"
+				+ "  Deadlines vary by university and program, so it's crucial to check the specific deadlines for each institution you're interested in.\r\n "
+				+ "Some have early decision or early action deadlines, while others have regular decision deadlines."
+				+" 4. What majors or programs does the university offer?\r\n"
+				+ "     Most universities offer a wide range of majors and programs across various fields, including arts, sciences, business, engineering, and more.\r\n"
+				+ "     You can usually find this information on the university's website or in their academic catalog.\r\n"
+				+ "5.What is the cost of tuition and fees?\r\n"
+				+ "    Tuition and fees vary depending on factors such as whether you're an in-state or out-of-state student, whether you're an undergraduate or graduate student, and whether you're enrolled in a specific program or college within the university. \r\n"
+				+ "    Financial aid options and scholarships may also affect the final cost.");
+		frmChatbot.getContentPane().add(textArea_1);
+		
+		
+		JButton btnNewButton_1 = new JButton("BACK");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				home c=new home();
+				c.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(1023, 666, 89, 23);
+		frmChatbot.getContentPane().add(btnNewButton_1);
+		
+		
+		
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated metC.hod stub
+		frmChatbot.setVisible(true);
+	}
+}
